@@ -71,10 +71,12 @@ export function StaggerText({
   return (
     <motion.span
       className={className}
+      style={{ display: "block" }}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once: true, amount: 0.01 }}
     >
+
       {text.split(" ").map((word, i) => (
         <span key={`${word}-${i}`} className="mr-[0.25em] inline-block overflow-hidden align-bottom">
           <motion.span

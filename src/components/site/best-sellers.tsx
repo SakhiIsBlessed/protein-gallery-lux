@@ -15,7 +15,7 @@ const PRODUCTS = [
 
 export function BestSellers() {
   return (
-    <section id="goals" className="relative px-6 py-28 sm:py-36">
+    <section id="goals" className="relative section-pad px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Athlete Approved"
@@ -27,7 +27,7 @@ export function BestSellers() {
           {PRODUCTS.map((p, i) => (
             <Reveal key={p.name} dir="mask" delay={i * 0.09}>
               <TiltCard intensity={7}>
-                <article className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-[oklch(0.17_0_0)]/70 backdrop-blur-xl transition-all duration-700 [transition-timing-function:var(--ease-lux)] group-hover:-translate-y-3 group-hover:border-primary/50 group-hover:shadow-[0_30px_80px_-30px_color-mix(in_oklab,var(--primary)_80%,transparent)]">
+                <article className="relative flex h-full flex-col overflow-hidden glass-card rounded-[1.75rem] transition-all duration-700 [transition-timing-function:var(--ease-lux)] group-hover:-translate-y-3 group-hover:border-primary/50 group-hover:shadow-[0_30px_80px_-30px_color-mix(in_oklab,var(--primary)_80%,transparent)]">
                   <div className="relative h-60 overflow-hidden bg-[oklch(0.13_0_0)]">
                     <div
                       className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"

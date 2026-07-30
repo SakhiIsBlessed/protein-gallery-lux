@@ -11,6 +11,7 @@ import { Testimonials } from "@/components/site/testimonials";
 import { Newsletter, SpecialOffer } from "@/components/site/offer";
 import { Footer } from "@/components/site/footer";
 import { Atmosphere, CursorGlow } from "@/components/site/atmosphere";
+import { CinematicSection, EmberDivider, ScrollProgress } from "@/components/site/parallax";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -42,7 +43,7 @@ function Index() {
     let raf = 0;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     import("lenis").then(({ default: Lenis }) => {
-      const l = new Lenis({ duration: 1.35, smoothWheel: true });
+      const l = new Lenis({ duration: 1.5, smoothWheel: true, lerp: 0.085, wheelMultiplier: 0.95 });
       lenis = l;
       const loop = (t: number) => {
         l.raf(t);
@@ -61,16 +62,30 @@ function Index() {
       <Preloader onDone={() => setReady(true)} />
       <Atmosphere />
       <CursorGlow />
+      <ScrollProgress />
       <div className="relative z-10">
         <Navbar />
         <main>
           <Hero ready={ready} />
-          <Categories />
-          <BestSellers />
+          <CinematicSection>
+            <Categories />
+          </CinematicSection>
+          <EmberDivider />
+          <CinematicSection>
+            <BestSellers />
+          </CinematicSection>
           <Brands />
-          <Stats />
-          <Testimonials />
-          <SpecialOffer />
+          <EmberDivider flip />
+          <CinematicSection>
+            <Stats />
+          </CinematicSection>
+          <CinematicSection>
+            <Testimonials />
+          </CinematicSection>
+          <EmberDivider />
+          <CinematicSection>
+            <SpecialOffer />
+          </CinematicSection>
           <Newsletter />
         </main>
         <Footer />

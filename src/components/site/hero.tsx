@@ -74,7 +74,7 @@ export function Hero({ ready }: { ready: boolean }) {
                 <motion.span
                   className={
                     i === 2
-                      ? "text-ember inline-block"
+                      ? "inline-block text-primary [text-shadow:0_0_60px_color-mix(in_oklab,var(--primary)_55%,transparent)]"
                       : "inline-block"
                   }
                   initial={{ y: "115%", rotate: 4, opacity: 0 }}

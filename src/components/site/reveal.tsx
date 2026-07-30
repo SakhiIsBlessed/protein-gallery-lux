@@ -69,23 +69,30 @@ export function StaggerText({
   delay?: number;
 }) {
   return (
-    <span className={className}>
+    <motion.span
+      className={className}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-40px" }}
+    >
       {text.split(" ").map((word, i) => (
         <span key={`${word}-${i}`} className="mr-[0.25em] inline-block overflow-hidden align-bottom">
           <motion.span
             className="inline-block"
-            initial={{ y: "110%", opacity: 0 }}
-            whileInView={{ y: "0%", opacity: 1 }}
-            viewport={{ once: true, margin: "-60px" }}
+            variants={{
+              hidden: { y: "110%", opacity: 0 },
+              visible: { y: "0%", opacity: 1 },
+            }}
             transition={{ duration: 1, delay: delay + i * 0.09, ease: EASE }}
           >
             {word}
           </motion.span>
         </span>
       ))}
-    </span>
+    </motion.span>
   );
 }
+
 
 export function SectionHeading({
   eyebrow,

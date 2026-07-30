@@ -22,11 +22,11 @@ export const Route = createFileRoute("/")({
         content:
           "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance.",
       },
-      { property: "og:title", content: "Protein Gallery — Fuel Your Performance" },
+      { property: "og:title", content: "Protein Gallery — Premium Sports Nutrition & Supplements" },
       {
         property: "og:description",
         content:
-          "A luxury house of performance nutrition. Lab-verified supplements from 50+ elite brands, shipped in 24 hours.",
+          "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

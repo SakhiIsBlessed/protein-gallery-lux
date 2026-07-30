@@ -77,21 +77,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Protein Gallery — Premium Sports Nutrition" },
+      { title: "Protein Gallery — Premium Sports Nutrition & Supplements" },
       {
         name: "description",
         content:
-          "Luxury performance nutrition. Authentic supplements from the world's elite brands.",
+          "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance.",
       },
       { name: "author", content: "Protein Gallery" },
-      { property: "og:title", content: "Protein Gallery — Premium Sports Nutrition" },
+      { property: "og:title", content: "Protein Gallery — Premium Sports Nutrition & Supplements" },
       {
         property: "og:description",
         content:
-          "Luxury performance nutrition. Authentic supplements from the world's elite brands.",
+          "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Protein Gallery — Premium Sports Nutrition & Supplements" },
+      { name: "twitter:description", content: "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5516b70c-4c64-4b3a-bbb4-c149d90fe6e1/id-preview-973e0ef6--a3dbf031-5c31-4a99-9990-9d52eb5b3d92.lovable.app-1785421952282.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5516b70c-4c64-4b3a-bbb4-c149d90fe6e1/id-preview-973e0ef6--a3dbf031-5c31-4a99-9990-9d52eb5b3d92.lovable.app-1785421952282.png" },
     ],
     links: [
       {

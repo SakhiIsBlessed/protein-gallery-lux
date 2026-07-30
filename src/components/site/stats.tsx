@@ -39,7 +39,7 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
 export function Stats() {
   return (
-    <section id="about" className="relative px-6 py-28 sm:py-36">
+    <section id="about" className="relative section-pad px-6">
       <div className="mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Why Choose Us"

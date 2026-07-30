@@ -37,7 +37,7 @@ export function Testimonials() {
   const item = ITEMS[i];
 
   return (
-    <section className="relative px-6 py-28 sm:py-36">
+    <section className="relative section-pad px-6">
       <div className="mx-auto max-w-4xl">
         <SectionHeading eyebrow="Community" title="Words From Athletes" />
 

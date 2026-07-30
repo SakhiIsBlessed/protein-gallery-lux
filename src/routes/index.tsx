@@ -1,24 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Preloader } from "@/components/site/preloader";
+import { Navbar } from "@/components/site/navbar";
+import { Hero } from "@/components/site/hero";
+import { Categories } from "@/components/site/categories";
+import { BestSellers } from "@/components/site/best-sellers";
+import { Brands } from "@/components/site/brands";
+import { Stats } from "@/components/site/stats";
+import { Testimonials } from "@/components/site/testimonials";
+import { Newsletter, SpecialOffer } from "@/components/site/offer";
+import { Footer } from "@/components/site/footer";
+import { Atmosphere, CursorGlow } from "@/components/site/atmosphere";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Protein Gallery — Premium Sports Nutrition & Supplements" },
+      {
+        name: "description",
+        content:
+          "Protein Gallery curates authentic whey, creatine, mass gainers and pre-workout from the world's elite supplement brands. Fuel your performance.",
+      },
+      { property: "og:title", content: "Protein Gallery — Fuel Your Performance" },
+      {
+        property: "og:description",
+        content:
+          "A luxury house of performance nutrition. Lab-verified supplements from 50+ elite brands, shipped in 24 hours.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let lenis: { destroy: () => void } | undefined;
+    let raf = 0;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    import("lenis").then(({ default: Lenis }) => {
+      const l = new Lenis({ duration: 1.35, smoothWheel: true });
+      lenis = l;
+      const loop = (t: number) => {
+        l.raf(t);
+        raf = requestAnimationFrame(loop);
+      };
+      raf = requestAnimationFrame(loop);
+    });
+    return () => {
+      cancelAnimationFrame(raf);
+      lenis?.destroy();
+    };
+  }, []);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Preloader onDone={() => setReady(true)} />
+      <Atmosphere />
+      <CursorGlow />
+      <div className="relative z-10">
+        <Navbar />
+        <main>
+          <Hero ready={ready} />
+          <Categories />
+          <BestSellers />
+          <Brands />
+          <Stats />
+          <Testimonials />
+          <SpecialOffer />
+          <Newsletter />
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 }

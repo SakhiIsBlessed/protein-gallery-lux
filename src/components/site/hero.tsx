@@ -74,7 +74,7 @@ export function Hero({ ready }: { ready: boolean }) {
                 <motion.span
                   className={
                     i === 2
-                      ? "inline-block bg-[var(--gradient-ember)] bg-clip-text text-transparent"
+                      ? "text-ember inline-block"
                       : "inline-block"
                   }
                   initial={{ y: "115%", rotate: 4, opacity: 0 }}

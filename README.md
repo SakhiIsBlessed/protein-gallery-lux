@@ -514,17 +514,9 @@ The final website should feel like an Awwwards-winning luxury ecommerce experien
 
 Do not generate a generic ecommerce template. Focus on creating a memorable brand experience that users enjoy exploring.
 
-This project was built with [Lovable](https://lovable.dev).
 
 **Live app**: https://protein-gallery-lux.lovable.app
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/a3dbf031-5c31-4a99-9990-9d52eb5b3d92).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
